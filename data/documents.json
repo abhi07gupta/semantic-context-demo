@@ -1,6 +1,48 @@
 [
-  {"id":"doc-1","title":"Nova family power recovery","text":"For Nova family devices with unexpected shutdown, inspect power delivery and battery health before component replacement.","entities":["family:nova","issue:power"]},
-  {"id":"doc-2","title":"Nordics field service policy","text":"Nordics field technicians may perform approved on-site component replacement when the field repair policy applies.","entities":["region:nordics","policy:field-repair"]},
-  {"id":"doc-3","title":"Display calibration","text":"Calibrate display brightness after panel replacement.","entities":["family:nova"]},
-  {"id":"doc-4","title":"General return policy","text":"Return unopened accessories within the standard return period.","entities":[]}
+  {
+    "id": "doc-routing",
+    "title": "Gateway routing change rollback",
+    "text": "Procedure for reverting a routing configuration when downstream latency increases after a gateway change.",
+    "entities": [
+      "svc-gateway",
+      "chg-routing",
+      "sig-latency",
+      "run-rollback"
+    ]
+  },
+  {
+    "id": "doc-payment",
+    "title": "Payment error investigation",
+    "text": "Runbook for elevated payment authorization errors and retry behavior.",
+    "entities": [
+      "svc-payment",
+      "sig-errors"
+    ]
+  },
+  {
+    "id": "doc-checkout",
+    "title": "Checkout dependency map",
+    "text": "Checkout depends on the API gateway and payment service. Inspect dependency health before changing application code.",
+    "entities": [
+      "svc-checkout",
+      "svc-gateway",
+      "svc-payment"
+    ]
+  },
+  {
+    "id": "doc-capacity",
+    "title": "General capacity checklist",
+    "text": "Review CPU memory queue depth and response time for services that appear slow.",
+    "entities": [
+      "sig-latency"
+    ]
+  },
+  {
+    "id": "doc-release",
+    "title": "Release readiness checklist",
+    "text": "Confirm monitoring rollback ownership and stakeholder communication before production release.",
+    "entities": [
+      "run-rollback"
+    ]
+  }
 ]

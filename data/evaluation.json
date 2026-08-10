@@ -1,0 +1,18 @@
+[
+  {
+    "query": "Why is checkout slow after the gateway change?",
+    "relevant": "doc-routing"
+  },
+  {
+    "query": "checkout dependency health",
+    "relevant": "doc-checkout"
+  },
+  {
+    "query": "payments are returning errors",
+    "relevant": "doc-payment"
+  },
+  {
+    "query": "how do I reverse the routing update?",
+    "relevant": "doc-routing"
+  }
+]

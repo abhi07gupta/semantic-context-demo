@@ -1,12 +1,35 @@
-import sys, unittest
+import json
+import sys
+import unittest
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'src'))
-from semantic_context_demo import SemanticContextEngine
-class TestEngine(unittest.TestCase):
+
+sys.path.insert(0, str(Path(__file__).parents[1] / "src"))
+
+from semantic_context_demo import ContextEngine, evaluate
+
+
+class SemanticContextTests(unittest.TestCase):
     @classmethod
-    def setUpClass(cls): cls.e=SemanticContextEngine(ROOT/'data/entities.json',ROOT/'data/documents.json')
-    def test_context_finds_power_doc_first(self): self.assertEqual(self.e.context_search('battery issue for Nova X in Sweden')[0].doc_id,'doc-1')
-    def test_context_surfaces_nordics_policy(self): self.assertIn('doc-2',[r.doc_id for r in self.e.context_search('battery issue for Nova X in Sweden')[:3]])
-    def test_lexical_returns_results(self): self.assertTrue(self.e.lexical_search('display Nova'))
-if __name__=='__main__': unittest.main()
+    def setUpClass(cls):
+        data = Path(__file__).parents[1] / "data"
+        load = lambda name: json.loads((data / name).read_text())
+        cls.engine = ContextEngine(load("documents.json"), load("entities.json"), load("relationships.json"))
+        cls.cases = load("evaluation.json")
+
+    def test_context_retrieves_routing_runbook(self):
+        result = self.engine.search("Why is checkout slow after the gateway change?")
+        self.assertEqual(result[0].document_id, "doc-routing")
+        self.assertGreater(result[0].context_score, 0)
+        self.assertTrue(result[0].provenance)
+
+    def test_baseline_is_available(self):
+        result = self.engine.search("payments errors", use_context=False)
+        self.assertEqual(result[0].document_id, "doc-payment")
+
+    def test_context_does_not_reduce_mrr(self):
+        metrics = evaluate(self.engine, self.cases)
+        self.assertGreaterEqual(metrics["context_mrr"], metrics["baseline_mrr"])
+
+
+if __name__ == "__main__":
+    unittest.main()

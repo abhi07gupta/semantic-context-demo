@@ -1,0 +1,32 @@
+[
+  {
+    "source": "svc-checkout",
+    "target": "svc-gateway",
+    "type": "depends_on"
+  },
+  {
+    "source": "svc-checkout",
+    "target": "svc-payment",
+    "type": "depends_on"
+  },
+  {
+    "source": "chg-routing",
+    "target": "svc-gateway",
+    "type": "changes"
+  },
+  {
+    "source": "sig-latency",
+    "target": "svc-gateway",
+    "type": "observed_on"
+  },
+  {
+    "source": "sig-errors",
+    "target": "svc-payment",
+    "type": "observed_on"
+  },
+  {
+    "source": "run-rollback",
+    "target": "chg-routing",
+    "type": "reverses"
+  }
+]

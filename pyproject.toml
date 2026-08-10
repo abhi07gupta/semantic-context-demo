@@ -1,5 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "semantic-context-demo"
 version = "1.0.0"
-description = "Synthetic demonstration of structured semantic context for retrieval"
+description = "Explainable graph-augmented retrieval on a synthetic service domain"
+readme = "README.md"
 requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Abhi Gupta"}]
+
+[project.scripts]
+semantic-demo = "semantic_context_demo.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

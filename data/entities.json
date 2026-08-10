@@ -1,15 +1,53 @@
-{
-  "entities": [
-    {"id":"product:nova-x","name":"Nova X","type":"product"},
-    {"id":"family:nova","name":"Nova","type":"product_family"},
-    {"id":"region:sweden","name":"Sweden","type":"country"},
-    {"id":"region:nordics","name":"Nordics","type":"region"},
-    {"id":"issue:power","name":"Power issue","type":"issue"},
-    {"id":"policy:field-repair","name":"Field repair policy","type":"policy"}
-  ],
-  "relations": [
-    ["product:nova-x","member_of","family:nova"],
-    ["region:sweden","member_of","region:nordics"],
-    ["issue:power","governed_by","policy:field-repair"]
-  ]
-}
+[
+  {
+    "id": "svc-checkout",
+    "name": "Checkout Service",
+    "aliases": [
+      "checkout"
+    ]
+  },
+  {
+    "id": "svc-gateway",
+    "name": "API Gateway",
+    "aliases": [
+      "gateway"
+    ]
+  },
+  {
+    "id": "svc-payment",
+    "name": "Payment Service",
+    "aliases": [
+      "payments"
+    ]
+  },
+  {
+    "id": "sig-latency",
+    "name": "Latency",
+    "aliases": [
+      "slow",
+      "slowness"
+    ]
+  },
+  {
+    "id": "chg-routing",
+    "name": "Routing Change",
+    "aliases": [
+      "routing",
+      "gateway change"
+    ]
+  },
+  {
+    "id": "run-rollback",
+    "name": "Rollback Procedure",
+    "aliases": [
+      "rollback"
+    ]
+  },
+  {
+    "id": "sig-errors",
+    "name": "Error Rate",
+    "aliases": [
+      "errors"
+    ]
+  }
+]
