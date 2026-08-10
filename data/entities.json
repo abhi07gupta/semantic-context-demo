@@ -1,0 +1,15 @@
+{
+  "entities": [
+    {"id":"product:nova-x","name":"Nova X","type":"product"},
+    {"id":"family:nova","name":"Nova","type":"product_family"},
+    {"id":"region:sweden","name":"Sweden","type":"country"},
+    {"id":"region:nordics","name":"Nordics","type":"region"},
+    {"id":"issue:power","name":"Power issue","type":"issue"},
+    {"id":"policy:field-repair","name":"Field repair policy","type":"policy"}
+  ],
+  "relations": [
+    ["product:nova-x","member_of","family:nova"],
+    ["region:sweden","member_of","region:nordics"],
+    ["issue:power","governed_by","policy:field-repair"]
+  ]
+}
