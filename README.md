@@ -23,8 +23,8 @@ flowchart LR
 
 ## Why this matters
 
-Enterprise questions often depend on relationships that are not repeated in
-every document: a service depends on a gateway, a change modifies that gateway,
+Enterprise workflows and AI-enabled products often depend on relationships that
+are not repeated in every document: a service depends on a gateway, a change modifies that gateway,
 and a runbook reverses the change. Pure keyword matching can miss the best
 evidence when the question and document use different language. Semantic
 context makes those relationships explicit while preserving traceability.
@@ -90,7 +90,7 @@ context; it does not disclose employer architecture, data, clients, or systems.
 
 ## Author
 
-**Abhi Gupta**: Enterprise AI technical leader and architect based in Stockholm.
+**Abhi Gupta**: AI systems technical leader and architect across enterprise and product contexts, based in Stockholm.
 
 [Portfolio](https://abhi07gupta.github.io/) ·
 [LinkedIn](https://www.linkedin.com/in/abhi07gupta/) ·
