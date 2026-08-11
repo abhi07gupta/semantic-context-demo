@@ -1,4 +1,4 @@
-# Semantic Context Demo — Explainable Graph-Augmented Retrieval
+# Semantic Context Demo: Explainable Graph-Augmented Retrieval
 
 [![quality](https://github.com/abhi07gupta/semantic-context-demo/actions/workflows/quality.yml/badge.svg)](https://github.com/abhi07gupta/semantic-context-demo/actions/workflows/quality.yml)
 [![MIT license](https://img.shields.io/badge/license-MIT-0f766e.svg)](LICENSE)
@@ -90,7 +90,7 @@ context; it does not disclose employer architecture, data, clients, or systems.
 
 ## Author
 
-**Abhi Gupta** — Enterprise AI technical leader and architect based in Stockholm.
+**Abhi Gupta**: Enterprise AI technical leader and architect based in Stockholm.
 
 [Portfolio](https://abhi07gupta.github.io/) ·
 [LinkedIn](https://www.linkedin.com/in/abhi07gupta/) ·
